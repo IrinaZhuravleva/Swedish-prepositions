@@ -12,6 +12,9 @@ body {
   height: 100vh;
   display: flex;
 }
+button {
+  border: none;
+}
 
 .container {
   margin: auto;
@@ -43,38 +46,44 @@ h3 {
 .question, 
 button, 
 .nextButton,
-.number {
-  border: 5px solid black;
+.number,
+.reload-btn {
+  /* border: 5px solid black; */
   color: white;
   background-color: black;
   border-radius: 15px;
   padding: 10px;
 }
 
+.nextButton:hover {
+  transition: all .25s ease-in;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.nextButton {
+  text-transform: uppercase;
+}
+
 .question {
   display: block;
   /* max-width: 800px; */
   width: 100%;
-  min-height: 80px;
   font-size: 24px;
   text-align: center;
   /* vertical-align: middle; */
   margin: 0 auto;
   margin-top: 50px;
   padding: 10px;
+  padding-bottom: 15px;
 }
 
 .answers {
   display: block;
   margin-top: 40px;
   text-align: center;
-
-
-/*   margin: 120px 420px; */
-/*   padding: 50px 50px; */
 }
-
-
 
 button {
   font-size: 24px;
@@ -82,26 +91,51 @@ button {
   padding: 10px;
 }
 
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
 .nextButton {
   display: block;
   font-size: 24px;
   text-align: center;
   padding: 10px;
-  margin-top: 80px;
+  /* margin-top: 80px; */
   margin-right: 0;
   margin-left: auto;
   /* margin-left: 1100px; */
 }
+.reload-btn {
+  background-image: url('reload.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-color: #fff;
+  color: transparent;
+  background-size: 25%;
+  transition: all .25s ease-in;
+}
+
+.reload-btn:hover {
+  cursor: pointer;
+  transition: all .25s ease-in;
+  background-color: #fff;
+  background-image: none;
+  /* color: #000; */
+  color: lightslategray;
+}
 
 .checking {
-  margin-top: 20px;
-  width: 100%;
+  
+  width: calc(100% - 30px);
   border-radius: 10px;
   padding: 5px 20px;
   color: #ffffff;
   position: absolute;
-  bottom: 90px;
-  left: 0;
+  bottom: 135px;
+  left: 15px;
 }
 
 .checking-incorrect {
