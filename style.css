@@ -48,7 +48,7 @@ button,
 .nextButton,
 .number,
 .reload-btn {
-  /* border: 5px solid black; */
+  border: 2px solid black;
   color: white;
   background-color: black;
   border-radius: 15px;
@@ -59,7 +59,6 @@ button,
   transition: all .25s ease-in;
   color: #000;
   background-color: #fff;
-  border: 2px solid #000;
 }
 
 .nextButton {
@@ -108,6 +107,7 @@ button {
   /* margin-left: 1100px; */
 }
 .reload-btn {
+  border: 2px solid transparent;
   background-image: url('reload.png');
   background-repeat: no-repeat;
   background-position: center;
