@@ -94,7 +94,7 @@ button {
 .buttons-wrapper {
   display: flex;
   justify-content: space-between;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 .nextButton {
@@ -135,7 +135,7 @@ button {
   padding: 5px 20px;
   color: #ffffff;
   position: absolute;
-  bottom: 135px;
+  bottom: 90px;
   left: 15px;
 }
 
