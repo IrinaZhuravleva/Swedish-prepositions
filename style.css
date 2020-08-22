@@ -74,7 +74,7 @@ button,
   text-align: center;
   /* vertical-align: middle; */
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
   padding: 10px;
   padding-bottom: 15px;
 }
@@ -94,7 +94,7 @@ button {
 .buttons-wrapper {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 130px;
 }
 
 .nextButton {
@@ -129,13 +129,12 @@ button {
 }
 
 .checking {
-  
   width: calc(100% - 30px);
   border-radius: 10px;
   padding: 5px 20px;
   color: #ffffff;
   position: absolute;
-  bottom: 90px;
+  bottom: 80px;
   left: 15px;
 }
 
