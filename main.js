@@ -1,102 +1,38 @@
-var answers = ["-", "på", "i", "om"];
+var answers = ["unglaubliche", "umfeld", "wissentliche", "wissenchaftlich"];
 var button = document.querySelector('button');
 button.disabled = true;
 
 var tralivali = [{
-        question: `Mariann tränar sig tre gånger _______ veckan.`,
+        question: `Невероятный`,
         answers: answers,
-        correct: 2
+        correct: 0
     },
     {
-        question: 'Varje gång tränar hon _______ två timmar ungefär.',
+        question: 'Научный',
+        answers: answers,
+        correct: 3
+    }, {
+        question: 'Окружающая среда',
+        answers: answers,
+        correct: 1
+    
+    }, {
+        question: 'Существенный',
         answers: answers,
         correct: 2
-    }, {
-        question: 'Hon springer snabbt, 5 kilometer _______ 15 minuter.',
-        answers: answers,
-        correct: 1,
-    }, {
-        question: 'Bengt lyssnar på sportnyheter flera gånger _______ dagen.',
-        answers: answers,
-        correct: 3,
-    }, {
-        question: 'I dag talar de om en man som har sprungit 100 meter _______ 9 sekunder.',
-        answers: answers,
-        correct: 1,
-    }, {
-        question: 'Örjan har tränat karate _______ 3 år.',
-        answers: answers,
-        correct: 0,
-    }, {
-        question: 'Han tränar 4 gånger _______ veckan.',
-        answers: answers,
-        correct: 2,
-    }, {
-        question: 'Eva rider. Hon rider två gånger _______ veckan på en ridskola.',
-        answers: answers,
-        correct: 2,
-    }, {
-        question: 'Några gånger _______ månader rider hon en kompis häst.',
-        answers: answers,
-        correct: 2,
-    }, {
-        question: 'Minst två gånger _______ året åker hon på ridresa till något exotiskt ställe.',
-        answers: answers,
-        correct: 3,
-    }, {
-        question: '_______ vintern åker jag skidor.',
-        answers: answers,
-        correct: 1,
-    }, {
-        question: 'Jag vare jätteduktig _______ styrketräning.',
-        answers: answers,
-        correct: 1,
-    }, {
-        question: 'Om du vill gå ner _______ vikt bör du gå på gympa.',
-        answers: answers,
-        correct: 2,
-    }, {
-        question: 'Man kan försöka skära ner på fettet _______ maten ock röra på sig mer.',
-        answers: answers,
-        correct: 2,
-    }, {
-        question: 'På morgonen är hans barn så långsamma. Han säger: Skynda _______! , men de lyssnar inte.',
-        answers: answers,
-        correct: 1,
-    }, {
-        question: 'Jag tycker inte att gå _______ simhallen.',
-        answers: answers,
-        correct: 2,
-    }, {
-        question: 'Jag har blivit kär _______ min bäst väns flickvän.',
-        answers: answers,
-        correct: 2,
-    }, {
-        question: 'Bry dig inte _______ att han luktar.',
-        answers: answers,
-        correct: 3,
-    }, {
-        question: 'Har du gott _______ pengar?',
-        answers: answers,
-        correct: 3,
-    },
-    {
-        question: 'Min kompis och jag har känt varandra _______ mer än tjugo år.',
-        answers: answers,
-        correct: 2,
     }
 ];
 
 var currentQuestionIndex = 0;
 var expressionNumber = document.querySelector('.expression-number');
-expressionNumber.innerText = `Номер вопроса: ${currentQuestionIndex + 1} из ${tralivali.length}`;
+expressionNumber.innerText = `Слово: ${currentQuestionIndex + 1} из ${tralivali.length}`;
 
 
-var correctAnswer = 0;
-var result = {
-    correct: 0,
-    incorrect: 0
-}
+// var correctAnswer = 0;
+// var result = {
+//     correct: 0,
+//     incorrect: 0
+// }
 
 function showQuestion() {
     var questionToShow = selectQuestion();
@@ -121,13 +57,7 @@ function selectQuestion() {
 var nextButton = document.querySelector('button.nextButton')
 
 function nextQuestion(correct, index) {
-    checkVisibility();
-
-    var str = tralivaliShuffled[currentQuestionIndex].question.split('_______');
-    var nextButton = document.querySelector('button.nextButton')
-    str.splice(1, 0, answers[index].toUpperCase());
-    var readyStr = str.join(' ');
-    document.querySelector('.question').innerHTML = readyStr;
+    document.querySelector('.question').innerHTML = tralivaliShuffled[currentQuestionIndex].question;
 
     if (correct == index) {
         document.querySelector('.checking-correct').style.display = 'block';
@@ -141,7 +71,6 @@ function nextQuestion(correct, index) {
         }
     }
 }
-
 
 function addQuestionToSite(item) {
     document.querySelector('.question').innerHTML = item.question;
@@ -170,8 +99,7 @@ function nextButtonClickHandler() {
     } else {
         clearAnswersHTML();
         currentQuestionIndex++;
-        document.querySelector('.expression-number').innerText = `Номер вопроса: ${currentQuestionIndex + 1} из ${tralivali.length}`;
-        checkVisibility();
+        document.querySelector('.expression-number').innerText = `Номер слова: ${currentQuestionIndex + 1} из ${tralivali.length}`;
         showQuestion();
     }
 }
