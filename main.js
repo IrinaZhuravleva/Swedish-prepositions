@@ -97,9 +97,11 @@ var result = {
     correct: 0,
     incorrect: 0
 }
+var questionToShow;
 
 function showQuestion() {
     var questionToShow = selectQuestion();
+    button.disabled = true;
     addQuestionToSite(questionToShow);
 }
 
